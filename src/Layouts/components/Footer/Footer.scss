@@ -1,0 +1,167 @@
+@import '../../../Components//GlobalStyle//reponsive';
+
+$paddingFooter : 40px 140px 0 140px;
+$paddingFooterMobile : 50px 20px 30px 20px;
+$FooterColor: #824DE3;
+
+.footer-wrapper {
+    --mask:
+        radial-gradient(34.99px at 50% 48.00px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+        radial-gradient(34.99px at 50% -18px,#0000 99%,#000 101%) 50% 30px/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+   
+    
+    padding: $paddingFooter;
+    background-color: $FooterColor;
+    color: #fff;
+
+    @include mobile {
+        padding: $paddingFooterMobile;
+        
+    }
+}
+
+.logo-and-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    @include mobile {
+        a {
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 6px 0;
+
+    img {
+        padding: 14px 0;
+    }
+}
+
+.user {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0 36px 0 ;
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.me {
+    display: flex;
+    flex-direction: column;
+}
+
+.policies {
+    border-top: 1px solid #ddd;
+    padding: 18px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;
+
+    @include mobile {
+        display: none;
+    }
+}
+
+.policies-link {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.email-user {
+    position: relative;
+    p {
+        font-size: 12px;
+        padding-left: 12px;
+    }
+     
+    .input-email {
+        height: 40px;
+        width: 400px;
+        position: relative;
+        margin-top: 8px;
+
+        input {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            background-color: #5C389F;
+            color: #fff;
+            padding: 0 18px;
+        }
+       
+    }
+
+    button {
+        background-color: #F09318;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 40px;
+        padding: 0 28px;
+        border-radius: 20px;
+        color: #fff;
+        font-family: 700;
+    }
+
+    @include mobile {
+        .input-email {
+            width: 100%;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            padding-bottom: 12px;
+        }
+    }
+}
+
+.contact {
+    font-size: 14px;
+    padding-top: 18px;
+    padding-bottom: 8px;
+    display: flex;  
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #ddd;
+    p {
+        font-weight: 400;
+    }
+
+    span {
+        padding-right: 12px;
+    }
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+
+        p {
+            padding: 4px 0;
+            margin: 4px 0;
+        }
+    }
+}
+
