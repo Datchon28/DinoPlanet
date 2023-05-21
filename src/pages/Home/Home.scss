@@ -45,7 +45,8 @@ $background-introduce: #3d066e;
 
         .img-carton-astro {
           width: 320px;
-          height: fit-content;
+          height: 100%;
+          object-fit: cover;
           transform: rotate(10deg);
           animation: flying 4s ease-in-out infinite;
           transition: all;

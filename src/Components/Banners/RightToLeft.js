@@ -13,7 +13,7 @@ function RightToLeft({ image, title, slogan, desc, bgcolor }) {
                 <span><FontAwesomeIcon icon={faArrowAltCircleRight} /></span>
             </div>
             
-            <div className={st('box')} data-aos="fade-left" data-aos-delay="500" data-aos-duration="2000"  >
+            <div className={st('box')} data-aos="fade-left" data-aos-delay="500" data-aos-duration="1000"  >
                 <div className={st('content-left')}>
                     <h1>
                         {title}

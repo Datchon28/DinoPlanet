@@ -1,19 +1,22 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Funlearning from "./pages/Funlearning/Funlearning";
+import React ,{ Suspense, lazy } from "react";
+
 import DefaultLayout from "./Layouts/DefaultLayout/DefaultLayout";
+import { Loading } from "./Components/Loading/Loading";
+const Home = React.lazy(() => import('./pages/Home/Home'));
+const Funlearning = React.lazy(() => import('./pages/Funlearning/Funlearning'));
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <DefaultLayout>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/funlearning" element={<Funlearning />} />
-            <Route exact path="/funlearning" element={<Funlearning />} />
-            {/* <Route exact path="/about-us" element={<Page404 />} /> */}
-          </Routes>
+          <Suspense fallback={<Loading loadPage={true} />} >
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/funlearning" element={<Funlearning />} />
+            </Routes>
+          </Suspense>
         </DefaultLayout>
       </BrowserRouter>
       

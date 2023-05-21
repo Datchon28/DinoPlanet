@@ -29,7 +29,7 @@ import grass from '../../assets/img/Funlearning/Introduce/Vector (1).png'
 import rocket from '../../assets/img/Home/Introduce/rocket.png'
 import city from '../../assets/img/Funlearning/Introduce/Vector (2).png'
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const st = classNames.bind(style)
 
@@ -85,6 +85,7 @@ function Funlearning() {
                 </div>
             </div>
 
+
             <div className={st('main-content')}>
                 <div className={st('title')}>
                     <h1>PLAYING IS THE NEW LEARNING</h1>
@@ -104,7 +105,8 @@ function Funlearning() {
                     ))}
                 </div>
 
-                <div className={st('box_work-list')}  >
+                <div className={st('box_work-list')}>
+                        
                         {tabName === 'english' ? 
                             <CarouselSlider>
                                 <BoxWork thumbnail={english_work_1} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
@@ -113,7 +115,6 @@ function Funlearning() {
                                 <BoxWork thumbnail={learn} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
                             </CarouselSlider>
                         : tabName === 'math'  ? 
-                            
                             <div className={st('math')}>
                                 <h1>Learn how to write numbers</h1>
                                 <div className={st('math-sumary')}>
