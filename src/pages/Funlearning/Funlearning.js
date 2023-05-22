@@ -18,8 +18,6 @@ import english_work_1 from '../../assets/img/Funlearning/BoxWork/english-work-1.
 import english_work_2 from '../../assets/img/Funlearning/BoxWork/english-work-2.png'
 import english_work_3 from '../../assets/img/Funlearning/BoxWork/english-work-3.png'
 import math_work_1 from '../../assets/img/Funlearning/BoxWork/math-work-1.png'
-import math_banner from '../../assets/img/Funlearning/BoxWork/Banner-math.png'
-import Banner_math_footer from '../../assets/img/Funlearning/BoxWork/Banner_math_footer.png'
 
 // Banner
 import dinoImage from '../../assets/img/Funlearning/Introduce/5 5.png'
@@ -30,6 +28,7 @@ import rocket from '../../assets/img/Home/Introduce/rocket.png'
 import city from '../../assets/img/Funlearning/Introduce/Vector (2).png'
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import BannerFishing from "../../Components/Banners/BannerFishing/BannerFishing";
 
 const st = classNames.bind(style)
 
@@ -132,17 +131,7 @@ function Funlearning() {
                                     development of children.
                                 </p>
 
-                                <div className={st('math-footer')}>
-                                    <img alt="footer" src={math_banner} />
-
-                                    <LeftToRight 
-                                        bgcolor={'math-footer-container'}
-                                        image={<img alt="banner-math" src={Banner_math_footer} />}
-                                        title='Ready to start your adventure with Dino?'
-                                        slogan='Alright! Just start downloading the Dino Planet app and explore it by yourself!'
-                                        desc={<button className={st('try-free-btn')}>Try for free</button>}
-                                    />
-                                </div>
+                                <BannerFishing />
                             </div>
                         
                         :

@@ -1,0 +1,61 @@
+@import '../../../Components//GlobalStyle/reponsive';
+
+$color-primary: #FFCD00;
+
+.BannerFishing {
+    position: relative;
+    max-height: 540px;
+    height: 100%;
+
+    img {
+        // width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .BannerFishing-container {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+
+        .control {
+            display: none;
+        }
+
+        .content-right {
+            p {
+                text-align: start;
+            }
+        }
+
+        .try-free-btn {
+            min-width: 260px;
+            min-height: 60px;
+            background-color: $color-primary;
+            color: #7E00FF;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        @include mobile {
+            width: 25%;
+
+            .box {
+                flex-direction: column;
+            }
+            
+            .content-right {
+                align-items: center;
+
+                span {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

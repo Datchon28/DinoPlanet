@@ -1,0 +1,228 @@
+@import '../../Components/GlobalStyle/reponsive';
+
+$color-primary: #FFCD00;
+$paddingMainContent: 100px 68px 20px 68px;
+$paddingMainContent-Mobile: 46px 22px 8px 22px;
+$heightDino: 270px;
+
+.contact-wrapper {
+    .introduce {
+        position: relative;
+        .backdrop {
+            max-height: 530px;
+            width: 100%;
+            padding-top: 54px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        
+        .item {
+            position: absolute;
+            bottom: -48px;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .title {
+                width: 70%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 22px;
+                padding: 0 90px;
+
+                img {
+                    width: 14%;
+                    height: 100%;
+                    object-fit: cover;
+
+                }
+            }
+
+            .earth {
+                width: 90%;
+                max-height: 250px;
+                height: 100%;
+            }
+
+            @include mobile {
+                bottom: 7px;
+
+                .title {
+                    font-size: 18px;
+                    flex-direction: column;
+                    padding: 0 30px;
+
+                    img {
+                        width: 36%;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .container {
+        
+        .content {
+            background-color: #fff;
+            position: relative;
+            padding-top: 92px;
+
+            @include mobile {
+                padding: 0 24px;
+                padding-top: 20px;
+            }
+
+            .contact-info {
+                display: flex;
+                justify-content: center;
+
+                .contact-info-list {
+                    list-style: none;
+                    width: 30%;
+
+                    h2 {
+                        color: #7E00FF;
+                        font-size: 34px;
+                    }
+
+                    .contact-info-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        margin-bottom: 12px;
+                        padding-right: 40px;
+
+                        .icon-info {
+                            padding-right: 14px;
+                            font-size: 48px;
+                        }
+                    }
+                }
+
+                .contact-form {
+                    position: relative;
+                    width: 40%;
+                    background-color: #824DE3;
+                    padding: 20px 40px;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+
+                    .dino-img {
+                        position: absolute;
+                        height: $heightDino;
+                        top: -$heightDino;
+                        right: 20%;
+                        object-fit: cover;
+                        
+                    }
+                    
+                    h2 {
+                        font-size: 40px;
+                        text-align: center;
+                        color: #fff;
+                        padding-bottom: 32px;
+                        padding-top: 12px;
+                    }
+
+                    .box-input {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: repeat(6, 1fr);
+                        row-gap: 12px;
+                        column-gap: 14px;
+
+                        .input {
+                            input {
+                                width: 100%;
+                                height: 100%;
+                                background-color: #5C389F;
+                                border-radius: 16px;
+                                padding: 14px 20px;
+                                color: #896FBA;
+                            }
+                        }
+
+                        .message {
+                            display: grid;
+                            grid-row: 3 / 6;
+                            grid-column: 1 / 3;
+                            margin-top: 8px;
+                        }
+                    }
+
+                    .form-send-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 12px;
+
+                        button {
+                            min-height: 50px;
+                            padding: 14px 64px;
+                            border-radius: 31px;
+                            background-color: #30B22C;
+                            font-size: 26px;
+                            color: #fff;
+                            font-weight: 600;
+                        }
+                        
+                    }
+                }
+
+                @include mobile {
+                    flex-direction: column;
+
+                    .contact-info-list {
+                        width: 100%;
+                        margin-bottom: 60px;
+                        text-align: center;
+
+                        .contact-info-item {
+                            font-size: 14px;
+                            font-weight: 600;
+                            
+                            .icon-info {
+                                font-size: 36px;
+                            }
+                        }
+                        
+                    }
+
+                    .contact-form {
+                        width: 100%;
+
+                        .dino-img {
+                        
+                            height: 180px;
+                            top: -180px;
+                            right: 0%;
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .map {
+            max-height: 800px;
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

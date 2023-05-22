@@ -237,9 +237,9 @@ function Home() {
                 <RightToLeft
                     image={<img alt="poster" src={lastbanner} />}
                     bgcolor={'last-banner'}
-                    title='SKILLS'
-                    slogan="We're Committed to Our Values"
-                    desc={"We appreciate children's happiness and desire to make every second of playing bring their needs"}
+                    title="We're Committed to Our Values"
+                    slogan="We appreciate children's happiness and desire to make every second of playing bring their needs"
+                    desc={""}
                 />
             </div>
         </div>
