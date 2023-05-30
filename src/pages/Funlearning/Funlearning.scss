@@ -4,7 +4,7 @@ $color-primary: #FFCD00;
 $paddingMainContent: 62px 68px 20px 68px;
 $paddingMainContent-Mobile: 46px 22px 8px 22px;
 
-.funlearning-wrapper {
+.funlearning-wrapper {  
 
     .introduce {
         position: relative;
@@ -40,6 +40,22 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
         }
 
         @include mobile {
+            .backdrop {
+    
+                img {
+                    transform: scale(1.75);
+                    padding-top: 45px;
+                }
+            }
+
+            .download-app {
+                width: 90%;
+                bottom: -22px;
+
+            }
+        }
+
+        @include tablet {
             .backdrop {
     
                 img {
@@ -94,51 +110,6 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
             }
         }
 
-        .box_work-list {
-            .math {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-
-                h1 {
-
-                }
-
-                .math-sumary {
-                    width: 70%;
-                    margin-top: 12px;
-                    padding: 12px 0;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border: 6px solid $color-primary;
-                        border-radius: 20px;       
-                    }
-
-                    @include mobile {
-                        width: 100%;     
-                    }
-                }
-
-                p {
-                    width: 70%;
-                    margin-top: 24px;
-                    text-align: center;
-                    line-height: 30px;
-                    font-weight: 600;
-
-                    @include mobile {
-                        width: 100%;    
-                        text-align: start; 
-                        margin-top: 12px;
-                    }
-                }
-            }
-        }
-
         .more {
             display: flex;
             align-items: center;
@@ -162,6 +133,43 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
         }
 
         @include mobile {
+
+            padding: $paddingMainContent-Mobile;
+            .title {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                h1 {
+
+                }
+
+                p {
+                    font-size: 13px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    margin-top: 20px;
+                    width: 78%;
+                }
+            }
+
+            .subjects-list {
+                .subject {
+                    min-width: 80px;
+                    margin: 12px 6px;
+
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .box_work-list {
+                margin-top: 12px;
+            }
+        }
+
+        @include tablet {
 
             padding: $paddingMainContent-Mobile;
             .title {
@@ -232,6 +240,10 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
             @include mobile {
                 display: none;
             }
+
+            @include tablet {
+                display: none;
+            }
         }
 
         .grass {    
@@ -265,6 +277,10 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
             @include mobile {
                 display: none;
             }
+
+            @include tablet {
+                display: none;
+            }
         }
 
         .customeBanner {
@@ -281,6 +297,10 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
                         width: 320px;
 
                         @include mobile {
+                            width: 280px;
+                        }
+
+                        @include tablet {
                             width: 280px;
                         }
                     }
@@ -304,6 +324,7 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
                     }
                }
            }
+           
 
            .download-link {
                 min-width: 150px;
@@ -409,6 +430,23 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
 
             .sign-up-input {
                 width: 100%;
+    
+            }
+        }
+
+        @include tablet {
+            padding: $paddingMainContent-Mobile;
+            
+            .title {
+                width: 100%;
+                h1 {
+                    font-size: 34px;
+                    text-align: center;
+                }
+            }
+
+            .sign-up-input {
+                width: 80%;
     
             }
         }

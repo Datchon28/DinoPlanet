@@ -57,5 +57,17 @@ $color-primary: #FFCD00;
                 }
             }
         }
+
+        @include tablet {
+            width: 46%;
+
+            .content-right {
+                align-items: flex-start;
+
+                span {
+                    text-align: center;
+                }
+            }
+        }
     }
 }

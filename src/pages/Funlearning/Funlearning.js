@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import style from './Funlearning.scss'
 import LeftToRight from '../../Components/Banners/LeftToRight'
+import Subjects from "./Subjects/Subjects";
 
 // Image
 import backdrop from '../../assets/img/Funlearning/Introduce/backdrop.png'
@@ -17,7 +18,6 @@ import BoxWork from "./Subjects/BoxWork/BoxWork";
 import english_work_1 from '../../assets/img/Funlearning/BoxWork/english-work-1.png'
 import english_work_2 from '../../assets/img/Funlearning/BoxWork/english-work-2.png'
 import english_work_3 from '../../assets/img/Funlearning/BoxWork/english-work-3.png'
-import math_work_1 from '../../assets/img/Funlearning/BoxWork/math-work-1.png'
 
 // Banner
 import dinoImage from '../../assets/img/Funlearning/Introduce/5 5.png'
@@ -26,9 +26,8 @@ import planetBanner from '../../assets/img/Funlearning/Introduce/2 1.png'
 import grass from '../../assets/img/Funlearning/Introduce/Vector (1).png'
 import rocket from '../../assets/img/Home/Introduce/rocket.png'
 import city from '../../assets/img/Funlearning/Introduce/Vector (2).png'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React, { useState } from "react";
-import BannerFishing from "../../Components/Banners/BannerFishing/BannerFishing";
 
 const st = classNames.bind(style)
 
@@ -64,10 +63,77 @@ function Funlearning() {
         }
     ]
 
-    const [tabName, setTabName] = useState('all')
+    const exercise = [
+       {    
+            id:'english',
+            english: 
+                [
+                    {
+                        exercise_id : '123',
+                        exercise_title: 'Learn to write numbers',
+                        backdrop: english_work_1,
+                        description: 'Tracing numbers 1 to 5: Escape maze game',
+                        
+                    }, 
+                    {
+                        exercise_id : '456',
+                        exercise_title: 'Dot to dot: shapes',
+                        backdrop: english_work_2,
+                        description: 'Connect the dot to form a correct Shapes'
+                    },
+                    {
+                        exercise_id : '789',
+                        exercise_title: 'Counting game for toddlers',
+                        backdrop: english_work_3,
+                        description: 'Counting 1 to 5: Piano Games'
+                    }
+                ], 
+        },
+        {   
+            id: 'math', 
+            math:  
+            [
+                {
+                    exercise_id : '',
+                    exercise_title: '',
+                    backdrop: '',
+                    description: ''
+                }
+            ]
+            
+        },
+        {
+            id: 'song',
+            song:
+            [
+                {
+                    exercise_id : '',
+                    exercise_title: '',
+                    backdrop: '',
+                    description: ''
+                }
+            ]
+        }
+      
+    ]
 
+    const [tabName, setTabName] = useState('all')
+    const [openExercise, setOpenExcercise] = useState(false)
+    const [subject, setSubject] = useState([])
+    const [exerciseChoose, setExerciseChoose] = useState([])
+
+    const handleOpenExercise = (e) => {
+        const exercise_id = e.target.id
+        setExerciseChoose(subject[0].english.filter(item => item.exercise_id === exercise_id))
+        setOpenExcercise(!openExercise)
+    }
+    
     const handleChooseSubject = (id) => {
         setTabName(id)
+        const subject = exercise.filter(item => item.id === id)
+        setSubject(subject)
+        setOpenExcercise(false)
+    
     }
 
     return (
@@ -105,45 +171,27 @@ function Funlearning() {
                 </div>
 
                 <div className={st('box_work-list')}>
-                        
-                        {tabName === 'english' ? 
-                            <CarouselSlider>
-                                <BoxWork thumbnail={english_work_1} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
-                                <BoxWork thumbnail={english_work_2} title='Dot to dot: shapes' desc="Connect the dot to form a correct Shapes" />
-                                <BoxWork thumbnail={english_work_3} title='Counting game for toddlers' desc="Counting 1 to 5: Piano Games" />
-                                <BoxWork thumbnail={learn} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
-                            </CarouselSlider>
-                        : tabName === 'math'  ? 
-                            <div className={st('math')}>
-                                <h1>Learn how to write numbers</h1>
-                                <div className={st('math-sumary')}>
-                                    <img alt="math-work-1" src={math_work_1} />
-                                </div>
-                                <p>
-                                    At the request of the Ministry of Education and Training, the Dino Planet program 
-                                    provides childrenwith foundational knowledge with topics about Numbers, 
-                                    Compound Separation, Flat Shape, Cube,Time, Position, Rule, and Measure.<br></br>
-
-                                    The first pre-primary education application for ages 3-6 to apply Professor Howard 
-                                    Gardner's theory of multiple intelligences and follows the new curriculum standards 
-                                    set by the Ministry of Education and Training. Providing 1,000 unique lessons, more 
-                                    than 10,000 interesting learning activities and creative exercises for the all-round
-                                    development of children.
-                                </p>
-
-                                <BannerFishing />
-                            </div>
-                        
-                        :
-                            <CarouselSlider>
-                                <BoxWork thumbnail={english} title='English' desc="Do you want to have fun with your learning? Let's go to Dino World." />
-                                <BoxWork thumbnail={math} title='Math' desc="Do you want to have fun with your learning? Let's go to Dino World." />
-                                <BoxWork thumbnail={song} title='Song' desc="Do you want to have fun with your learning? Let's go to Dino World." />
-                                <BoxWork thumbnail={learn} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
-                            </CarouselSlider>
-                        }
+                    {openExercise ? <Subjects title={exerciseChoose[0].exercise_title} background={exerciseChoose[0].backdrop} />
+                    : tabName === 'english' ? 
+                        <CarouselSlider>
+                            {
+                                exercise[0].english.map((item, index) => (
+                                    <BoxWork key={index} id={item.exercise_id} onClick={(e) => handleOpenExercise(e)} thumbnail={item.backdrop} title={item.exercise_title} desc="Tracing numbers 1 to 5:  Escape maze game" />
+                                ))
+                            }
+                            <BoxWork onClick={handleOpenExercise} thumbnail={learn} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
+                        </CarouselSlider>
                     
+                        :
+                        <CarouselSlider>
+                            <BoxWork onClick={handleOpenExercise} thumbnail={english} title='English' desc="Do you want to have fun with your learning? Let's go to Dino World." />
+                            <BoxWork onClick={handleOpenExercise} thumbnail={math} title='Math' desc="Do you want to have fun with your learning? Let's go to Dino World." />
+                            <BoxWork onClick={handleOpenExercise} thumbnail={song} title='Song' desc="Do you want to have fun with your learning? Let's go to Dino World." />
+                            <BoxWork onClick={handleOpenExercise} thumbnail={learn} title='Learn to write numbers' desc="Tracing numbers 1 to 5:  Escape maze game" />
+                        </CarouselSlider>
+                    }
                 </div>
+
 
                 <div className={st('more')}>
                     <h1>

@@ -6,12 +6,13 @@ import { Link } from "react-router-dom";
 
 const st = classNames.bind(style)
 
-function BoxWork({ thumbnail, title, desc, customeBox, to }) {
+function BoxWork({ thumbnail, title, desc, customeBox, to, onClick, id }) {
+
     return ( 
-        <div className={st('box-work', customeBox)}>
-            <Link to={to} className={st('thumbnail-link')}>
+        <div className={st('box-work', customeBox)} >
+            <Link to={to} className={st('thumbnail-link')} onClick={onClick}>
                 <div className={st('thumbnail')}>
-                    <img alt="thumbnail" src={thumbnail} />
+                    <img id={id} alt="thumbnail" src={thumbnail} />
                 </div>
             </Link>
 
@@ -20,7 +21,7 @@ function BoxWork({ thumbnail, title, desc, customeBox, to }) {
                     <h3>
                         {title}
                     </h3>
-
+        
                     <span>
                         <FontAwesomeIcon icon={faPlay} />
                     </span>

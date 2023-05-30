@@ -9,6 +9,10 @@ $background-introduce: #3d066e;
         margin-top: 90px;
     }
 
+    @include tablet {
+      margin-top: 90px;
+    }
+
   .introduce {
     position: relative;
     display: flex;
@@ -94,6 +98,23 @@ $background-introduce: #3d066e;
       }
 
       @include mobile {
+        .youtube {
+          display: none;
+        }
+
+        .img-carton {
+          .img-carton-planet {
+            left: -95px;
+          }
+
+          .img-carton-astro {
+            width: 204px;
+            transform: rotate(0deg);
+          }
+        }
+      }
+
+      @include tablet {
         .youtube {
           display: none;
         }
@@ -240,6 +261,58 @@ $background-introduce: #3d066e;
           }
         }
       }
+
+      @include tablet {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 44px 34px;
+        margin: 0;
+
+        .title {
+          font-size: 14px;
+          margin-top: 0;
+          margin-bottom: 14px;
+        }
+
+        .desc {
+          p {
+            font-size: 14px;
+          }
+        }
+
+        .download-app {
+          display: none;
+        }
+
+        .arrow-down {
+          display: none;
+        }
+
+        .ads {
+          max-height: 70px;
+          width: 100%;
+          align-items: center;
+          .title {
+            font-size: 12px;
+            font-weight: 600;
+          }
+
+          .cup {
+            img {
+              width: 60%;
+            }
+          }
+
+          .ads-brand {
+            img {
+              width: 60%;
+            }
+          }
+        }
+      }
     }
 
     .content-right {
@@ -320,6 +393,24 @@ $background-introduce: #3d066e;
           width: 180px;
         }
       }
+
+      @include tablet   {
+        right: 0;
+
+        .astronaut {
+          display: none;
+        }
+
+        .img-rocket {
+          width: 160px;
+          left: -78px;
+          transform: rotate(-12deg);
+        }
+
+        .img-earth {
+          width: 180px;
+        }
+      }
     }
   }
 
@@ -383,6 +474,33 @@ $background-introduce: #3d066e;
           max-width: 230px;
           bottom: 20px;
           
+        }
+      }
+
+      @include tablet {
+        padding-right: 0;
+        padding-left: 0;
+        padding: 94px 40px;
+
+        .control {
+          display: none;
+        }
+
+        .content-left {
+
+          .image-box {
+            width: 60%;
+          }
+        }
+
+        .mountain {
+          max-width: 230px;
+          bottom: 28px;
+          
+        }
+
+        .grass {
+          bottom: -94px;
         }
       }
       
@@ -478,6 +596,56 @@ $background-introduce: #3d066e;
                 font-size: 14px;
                 font-weight: 600;
                 margin-bottom: 14px;
+              }
+            }
+          }
+
+          .thumbnail {
+            max-width: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      @include tablet {
+        .control {
+          display: none;
+        }
+
+        .title {
+          text-align: center;
+        }
+
+        .content {
+          flex-direction: column;
+          padding: 12px 4px;
+
+          .logos {
+            max-width: 100%;
+            width: 100%;
+
+            .logo-image {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 12px;
+
+              img {
+                width: 104px;
+                margin: 0 2px;
+              }
+            }
+
+            .desc {
+              br {
+                display: none;
+              }
+              p {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 14px;
+                text-align: center;
               }
             }
           }
@@ -589,6 +757,7 @@ $background-introduce: #3d066e;
             top: unset;
           }
         }
+        
 
         .content-right {
           align-items: center;
@@ -608,6 +777,55 @@ $background-introduce: #3d066e;
               &:nth-child(2) {
                 display: none;
               }
+              &:nth-child(3) {
+                display: none;
+              }
+              &:nth-child(4) {
+                display: none;
+              }
+  
+          }
+        }
+      }
+
+      @include tablet {
+        padding: 0;
+
+        .content-left {
+          img {
+            transform: scale(2.5);
+          }
+          .squid2 {
+            right: 5%;
+            top: 10%;
+          }
+          
+          .love-img {
+            bottom: 100px;
+            right: 4px;
+            left: unset;
+            top: unset;
+          }
+        }
+        
+
+        .content-right {
+          padding: 18px 0;
+          align-items: center;
+          h1 {
+            padding-left: 16px;
+            text-align: center;
+          }
+        }
+
+        p {
+          justify-content: center;
+  
+          .feedback {
+            width: 80%;
+            height: 100%;
+            padding: 8px 14px;
+  
               &:nth-child(3) {
                 display: none;
               }

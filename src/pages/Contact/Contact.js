@@ -67,7 +67,7 @@ function Contact() {
                             ))}
                         </ul>
 
-                        <form className={st('contact-form')}>
+                        <form id="form-contact" className={st('contact-form')}>
                             <h2>Contact us</h2>
                             <img alt="dino" src={dino} className={st('dino-img')} />
                             

@@ -9,7 +9,7 @@ import BannerFishing from "../../Components/Banners/BannerFishing/BannerFishing"
 import city from '../../assets/img/Funlearning/Introduce/Vector (2).png'
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronCircleDown, faChevronCircleUp } from "@fortawesome/free-solid-svg-icons";
 
 const st = classNames.bind(style)
 
@@ -38,27 +38,32 @@ function Faqs() {
             id:'',
             title: 'about-dino-planet',
             container: [
-                {
+                {   id:'abc',
                     title:'About Dino Planet',
-                    content: "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                    content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
                 },
-                {
+                {   
+                    id:'def',
+                    title:'Lorem Ipsum',
+                    content: "This is demo. This is demo.This is demo.This is demoThis is demo "
+                },
+                {   
+                    id:'feg',
                     title:'Lorem Ipsum',
                     content: ""
                 },
-                {
+                {   
+                    id:'rtf',
                     title:'Lorem Ipsum',
                     content: ""
                 },
-                {
+                {   
+                    id:'lol',
                     title:'Lorem Ipsum',
                     content: ""
                 },
-                {
-                    title:'Lorem Ipsum',
-                    content: ""
-                },
-                {
+                {   
+                    id:'fifa',
                     title:'Lorem Ipsum',
                     content: ""
                 },
@@ -159,6 +164,15 @@ function Faqs() {
 
     const [tab, setTab] = useState('about-dino-planet')
     const [content, setContent] = useState(listMenuContent.filter(item => item.title === tab))
+    const [detail, setDetail] = useState(false)
+    const [seeDetail, setSeeDetail] = useState(null)
+
+    const handleOpenDetail = (id) => {
+        setSeeDetail(id)
+        // boxTitle.classList.add('see-detail')
+        setDetail(!detail)
+    }
+    console.log(seeDetail);
 
     return (
         <div className={st('faqs-wrapper')} data-aos='fade-up'>
@@ -193,21 +207,23 @@ function Faqs() {
                         {
                             content?.map((item, index) => (
 
-                                <div >
+                                <div key={item.id}>
                                     {item.container.map((c, index) => (
-                                        <div className={st('box')}>
-                                            <div className={st('box-title')}>
-                                                <h3 >{c.title}</h3>
-                                                <span><FontAwesomeIcon icon={faChevronCircleDown} /></span>
+                                        <div key={index} className={st('box')}  >
+                                            <div id={c.id} className={st('box-title')} onClick={(e) => handleOpenDetail(e.target.id)}>
+                                                <h3 id={c.id} >{c.title}</h3>
+                                                <span id={c.id}><FontAwesomeIcon icon={seeDetail !== c.id ? faChevronCircleUp : faChevronCircleDown} /></span>
                                             </div>
 
-                                            {c.content !== '' &&
-                                                <div className={st('box-content')}>
-                                                {
-                                                    c.content
-                                                }
-                                            </div>
-                                            }
+                                           
+                                                <div className={st('box-content', seeDetail !== c.id  && 'see-detail')}>
+                                                
+                                                   <p>
+                                                    { c.content}
+                                                   </p>
+                                                
+                                                </div>
+                                            
                                         </div>
                                     ))}
                                 </div>

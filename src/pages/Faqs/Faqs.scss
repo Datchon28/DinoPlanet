@@ -67,6 +67,22 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
                     }
                 }
             }
+
+            @include tablet {
+                bottom: -12px;
+
+                .title {
+                    width: 100%;
+                    text-align: center;
+                    flex-direction: column;
+                    font-size: 18px;
+                    padding: 0 30px;
+
+                    img {
+                        width: 25%;
+                    }
+                }
+            }
         }
 
     }
@@ -91,6 +107,11 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
             padding-top: 46px;
         }
 
+        @include tablet {
+            padding: 0;
+            padding-top: 46px;
+        }
+
         .content {
             display: flex;
             justify-content: space-around;
@@ -111,6 +132,7 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
                     background-color: #fff;
                     color: #8D8D8D;
                     font-weight: 600;
+                    cursor: pointer;
                 }
 
                 .active {
@@ -156,9 +178,20 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
                     }
 
                     .box-content {
-                        // border: 1px solid;
-                        padding: 8px 14px;
                         font-size: 14px;
+                        transition: all 1s linear;
+                        opacity: 1;
+
+                        p {
+                            padding: 8px 14px;
+                        }
+                        transition: all .5s linear;
+                    }
+
+                    .see-detail {
+                        height: 0;
+                        overflow: hidden;
+                        opacity: 0;
                     }
 
                 }
@@ -187,6 +220,19 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
                 .list-content {
                     width: 100%;
                     padding-top: 12px;
+                }
+            }
+
+            @include tablet {
+                width: 100%;
+                padding: 0 20px;
+
+                .list {
+                    width: 30%;
+                }
+
+                .list-content {
+                    width: 60%;
                 }
             }
         }
@@ -272,6 +318,23 @@ $paddingMainContent-Mobile: 46px 22px 8px 22px;
             }
 
             
+        }
+
+        @include tablet {
+            padding: $paddingMainContent-Mobile;
+            
+            .title {
+                width: 100%;
+                h1 {
+                    font-size: 34px;
+                    text-align: center;
+                }
+            }
+
+            .sign-up-input {
+                width: 80%;
+    
+            }
         }
     }
 

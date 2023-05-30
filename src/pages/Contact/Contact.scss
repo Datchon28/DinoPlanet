@@ -66,6 +66,22 @@ $heightDino: 270px;
                     }
                 }
             }
+
+            @include tablet {
+                bottom: -12px;
+
+                .title {
+                    width: 100%;
+                    text-align: center;
+                    flex-direction: column;
+                    font-size: 18px;
+                    padding: 0 30px;
+
+                    img {
+                        width: 25%;
+                    }
+                }
+            }
         }
 
     }
@@ -78,6 +94,11 @@ $heightDino: 270px;
             padding-top: 92px;
 
             @include mobile {
+                padding: 0 24px;
+                padding-top: 20px;
+            }
+
+            @include tablet {
                 padding: 0 24px;
                 padding-top: 20px;
             }
@@ -148,7 +169,7 @@ $heightDino: 270px;
                                 background-color: #5C389F;
                                 border-radius: 16px;
                                 padding: 14px 20px;
-                                color: #896FBA;
+                                color: #bdb4cf;
                             }
                         }
 
@@ -205,6 +226,38 @@ $heightDino: 270px;
                         
                             height: 180px;
                             top: -180px;
+                            right: 0%;
+
+                        }
+
+                    }
+                }
+
+                @include tablet {
+                    flex-direction: column;
+
+                    .contact-info-list {
+                        width: 100%;
+                        margin-bottom: 60px;
+                        text-align: center;
+
+                        .contact-info-item {
+                            font-size: 14px;
+                            font-weight: 600;
+                            
+                            .icon-info {
+                                font-size: 36px;
+                            }
+                        }
+                        
+                    }
+
+                    .contact-form {
+                        width: 100%;
+
+                        .dino-img {
+                            height: 220px;
+                            top: -220px;
                             right: 0%;
 
                         }
