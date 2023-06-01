@@ -1,5 +1,5 @@
 @import '../../../Components//GlobalStyle/reponsive';
-$padding-header : 20px 40px;
+$padding-header : 20px 185px;
 $padding-header-mobile : 8px 16px;
 $background-header: #250442;
 $background-header-menu-mobile: #3d066e;
@@ -15,7 +15,7 @@ $color-primary: #FFCD00;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 190px;
+    padding: $padding-header;
     background-color: #250442;
 
     @include mobile {
