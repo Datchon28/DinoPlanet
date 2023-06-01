@@ -1,38 +1,54 @@
 @import '../GlobalStyle/reponsive';
 
-$padding-banner: 50px 40px; 
+$padding-banner: 50px 166px; 
+$padding-banner--mobile: 50px 38px; 
 
 .left-to-right {
     position: relative;
     padding: $padding-banner;
+    
+    .wave-border {
+        position: absolute;
+        top: -30px;
+        z-index: 1;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
 
     .box {
+        min-height: 400px;
         display: flex;
+        align-items: center;
         justify-content: space-around;
         padding: 0 22px;
     }
 
     .content-right {
+        flex: 1;
         align-items: flex-start;
         justify-content: center;
 
         h1 {
             font-weight: 700;
-            font-size: 40px;
+            font-size: 60px;
         }
         
         p {
             font-weight: 600;
             margin: 20px 0;
+            font-size: 24px;
         }
 
         span {
             max-width: 60%;
             width: 100%;
+            font-size: 24px;
         }
     }
 
     .content-left {
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,6 +64,13 @@ $padding-banner: 50px 40px;
     }
 
     @include mobile {
+        padding: $padding-banner--mobile;
+        min-height: 350px;
+
+        .wave-border {
+            top: -40px;
+        }
+
         .content-left {
             max-width: 100% !important;
         }
@@ -74,19 +97,36 @@ $padding-banner: 50px 40px;
             }
         }
     }
+
+    @include tablet {
+        padding: $padding-banner--mobile;
+        min-height: 350px;
+    }
 }
 
 .right-to-left {
     position: relative;
     padding: $padding-banner;
 
+    .wave-border {
+        position: absolute;
+        top: -30px;
+        z-index: 1;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+
     .box {
+        min-height: 400px;
         display: flex;
+        align-items: center;
         justify-content: space-around;
         padding: 0 22px;
     }
 
     .content-left {
+        flex: 1;
         align-items: flex-start;
         justify-content: center;
         padding-left: 96px;
@@ -109,7 +149,7 @@ $padding-banner: 50px 40px;
     }
 
     .content-right {
-
+        flex: 1;
         .image-box {
             width: 80%;
 
@@ -121,6 +161,12 @@ $padding-banner: 50px 40px;
     }
 
     @include mobile {
+        padding: $padding-banner--mobile;
+        min-height: 350px;
+
+        .wave-border {
+            top: -40px;
+        }
         .box {
             flex-direction: column-reverse;
        }
@@ -129,6 +175,7 @@ $padding-banner: 50px 40px;
             max-width: 100%;
             width: 100%;
             justify-content: center;
+            align-items: center;    
        }
 
        .content-left {
@@ -152,6 +199,11 @@ $padding-banner: 50px 40px;
             }
        }
     }
+
+    @include tablet {
+        padding: $padding-banner--mobile;
+        min-height: 350px;
+    }
     
 }
 
@@ -164,6 +216,7 @@ $padding-banner: 50px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;
 
     span {
         font-size: 34px;
@@ -172,7 +225,15 @@ $padding-banner: 50px 40px;
     }
 
     @include mobile {
+        padding: $padding-banner--mobile;
         top: -22%;
+        
+    }
+
+    @include tablet {
+        padding: $padding-banner--mobile;
+        top: -22%;
+        
     }
 }
 

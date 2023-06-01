@@ -24,6 +24,10 @@ button {
   cursor: pointer;
 }
 
+img {
+  object-fit: cover;
+}
+
 button,
 input,
 [tabindex] {

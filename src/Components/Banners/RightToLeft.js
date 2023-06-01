@@ -5,9 +5,10 @@ import { faArrowAltCircleLeft, faArrowAltCircleRight } from "@fortawesome/free-r
 
 const st = classNames.bind(style)
 
-function RightToLeft({ image, title, slogan, desc, bgcolor }) {
+function RightToLeft({ image, title, slogan, desc, bgcolor, waveBorder }) {
     return (
         <div className={st('right-to-left', bgcolor)} >
+            {waveBorder}
             <div className={st('control')}>
                 <span><FontAwesomeIcon icon={faArrowAltCircleLeft} /></span>
                 <span><FontAwesomeIcon icon={faArrowAltCircleRight} /></span>

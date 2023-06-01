@@ -87,6 +87,18 @@ $heightDino: 270px;
     }
 
     .container {
+        position: relative;
+        .wave-border {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: -30px;
+            width: 100%;
+
+            @include mobile {
+                top: -50px;
+            }
+        }
         
         .content {
             background-color: #fff;
@@ -276,6 +288,26 @@ $heightDino: 270px;
                 height: 100%;
                 object-fit: cover;
             }
+        }
+
+        .last-banner {
+            padding: 200px 160px;
+
+            .control {
+                display: none;
+            }
+
+            .content-left {
+                h1 {
+                    font-size: 60px;
+                }
+
+                p {
+                    font-size: 26px;
+                }
+            }
+
+            
         }
     }
 }

@@ -17,8 +17,7 @@ function App() {
           <Suspense fallback={<Loading loadPage={true} />} >
             <Routes>
               <Route exact path="/" element={<Home />} />
-              <Route exact path="/funlearning" element={<Funlearning />}>
-              </Route>
+              <Route exact path="/funlearning" element={<Funlearning />} />
               <Route exact path="/faqs" element={<Faqs />} />
               <Route exact path="/contact-us" element={<Contact />} />
             </Routes>

@@ -1,3 +1,4 @@
+@import '../../../../Components/GlobalStyle/reponsive';
 $backgroundColor-Info: #AAEBFF;
 $paddingInfoWork: 12px 16px;
 
@@ -45,6 +46,14 @@ $paddingInfoWork: 12px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            
+            @include mobile {
+                flex-direction: row;
+            }
+
+            @include tablet {
+                flex-direction: row;
+            }
 
             h3 {
                 font-weight: 700;
