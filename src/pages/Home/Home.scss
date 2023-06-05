@@ -3,7 +3,7 @@
 $background-introduce: #3d066e;
 
 .home-wrapper {
-    margin-top: 150px;
+    margin-top: 135px;
 
     @include mobile {
         margin-top: 90px;
@@ -48,7 +48,8 @@ $background-introduce: #3d066e;
         }
 
         .img-carton-astro {
-          width: 520px;
+          max-width: 520px;
+          width: 100%;
           height: 100%;
           object-fit: cover;
           transform: rotate(10deg);
@@ -134,7 +135,7 @@ $background-introduce: #3d066e;
 
     .content-center {
       position: relative;
-      flex: 1;
+      flex: 2 ;
       color: #fff;
       text-align: center;
 
@@ -145,7 +146,7 @@ $background-introduce: #3d066e;
 
       .desc {
         p {
-          font-size: 23px;
+          font-size: 22px;
         }
       }
 
@@ -172,7 +173,7 @@ $background-introduce: #3d066e;
 
       .ads {
         position: absolute;
-        bottom: -82px;
+        bottom: -60px;
         right: 0;
         left: 0;
         display: flex;
@@ -182,14 +183,14 @@ $background-introduce: #3d066e;
         border-radius: 20px;
         background: #fff;
         color: #000;
-        max-height: 120px;
+        max-height: 110px;
         height: 100%;
         z-index: 2;
 
         .cup {
           flex: 1;
           img {
-            width: 80%;
+            width: 60%;
             height: 100%;
             object-fit: contain;
           }
